@@ -1,0 +1,36 @@
+<p>Tema 02: Directivas</p>
+<ul>
+    <!-- <li *ngFor="let animal of animales">{{animal}}</li> --> <!-- Esto se usaba antiguamente, ahora ya no. -->
+    
+    <!-- El track $index es uan forma de optimizar el como recorre la lista para luego pintarla -->
+    @for (animal of animales; track $index) {
+        <li>{{animal}}</li>
+    } <!-- Al usar track $index para trackear la posicion de la lista en la que se va pintando, no se puede volver a sobreescribir encima dese el DOM -->
+</ul>
+
+<div>
+    <input type="text" [(ngModel)]="username">
+    <input type="text" [(ngModel)]="password">
+    <button type="button" (click)="login()"></button>
+
+</div>
+
+@if (estasAutenticado) {
+    <p>Bienvenido {{username}}</p>
+
+    @switch (usuarioValido.rol) {
+        @case ('premium'){
+            <p>Tu suscripción caduca en 32 días.</p>
+        }
+        @case ('admin'){
+            <p>Tu suscripción es ilimitada.</p>
+        }
+        @default {
+            <p>Suscribete para obtener los beneficios.</p>
+        }        
+    }
+}
+@else {
+    <p>Logueate, por favor.</p>
+}
+

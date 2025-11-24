@@ -1,0 +1,16 @@
+{
+  "name": "07-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "transpilar": "tsc ./intro.ts --target es2024 -w" 
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

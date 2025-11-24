@@ -1,0 +1,19 @@
+<p>producto works!</p>
+<!-- 
+EJERCICIO
+ Crea una lista de producto que contenga los siguientes elementos:
+  - titulo
+  - descripcion
+  - precio
+  - fechaLanzamiento
+  - imagen
+-->
+
+<div>
+    <h1>Ficha del producto:</h1>
+    <h4>{{producto.titulo}}</h4>
+    <h4>{{producto.descripcion}}</h4>
+    <img [src]="producto.imagenUrl" width="150" />
+    <p>Precio: {{producto.precio}} €</p>
+    <p>Fecha: {{producto.fechaLanzamiento}}</p>
+</div>

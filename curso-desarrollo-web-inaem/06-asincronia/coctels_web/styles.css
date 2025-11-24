@@ -1,0 +1,122 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fd6b00bd; /*#fd6b00b0;*/
+}
+
+#buscador {
+    display: flex;
+    flex-direction: row;
+    /*border: 2px solid #cea665;*/
+    background-color: #ff852c36; /*background-color: #fd6b00b0;*/
+    /*border-radius: 0px 0px 8px 8px;*/
+    justify-content: space-between;
+    color: #fff2f2;
+    font-weight: bold;
+    gap: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    backdrop-filter: blur(24px);
+    box-shadow: -1px 20px 20px 8px #a16542a6;
+
+    img {
+        height: 28px;
+        margin: 12px;
+    }
+
+    div {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        input  {
+            text-align: end;
+            padding: 4px;
+            border-radius: 7px;
+            background-color: #fdf3dc;
+            border: 2px #d17e00 solid;
+            margin-left: 5px;
+            color: #d17e00;
+        }
+
+        span > button {
+            border: 0px;
+            background-color: transparent;
+            padding: 0px;
+            margin-right: 14px;
+            font-size: 20px;
+            
+            & > img {
+                width: 22px;
+                height: 22px;
+            }
+        }
+    }
+}
+
+
+ @media only screen and (max-width: 1344px) {
+    ul {
+        /*grid-template-columns: repeat(auto-fill, 144px) !important;*/
+    }
+  }
+
+div[id="contenedorCocktails"] {
+    display: flex;
+    justify-content: center;
+    margin-top: 45px;
+}
+
+
+ul {
+  list-style-type: none;
+  padding: 15px;
+  margin: 0 auto;
+  width: 100%;
+  justify-content: center;
+  overflow-x: overlay;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 374px);
+  gap: 14px;
+
+  li {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    /* margin: 5px; */
+    padding: 10px;
+    background-color: #ffb47d;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 18px;
+    margin-left: 18px;
+    justify-content: space-between;
+
+    span > img {
+        border-radius: 5px;
+    }
+
+    p {
+        overflow: auto;
+        text-align: center;
+        max-width: 148px;
+    }
+
+    button[class="btnIdDrink"] {
+        height: 100%;
+        margin-left: 10px;
+        width: 125px; /* 95px; */
+        font-size: 34px;
+        border: 0px;
+        background-color: #fff4d9;
+        border-radius: 5px;
+    }
+  }
+}

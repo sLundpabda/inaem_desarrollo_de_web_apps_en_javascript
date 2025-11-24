@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./newsletter.css">
+    <script src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuidv4.min.js"></script> <!-- Sacado de https://notepad.pw/web-inaem -->
+</head>
+<body>
+    <div class="contenedor">
+        <h3 class="title">Apuntate a mi newsletter de JS</h3>
+        <form class="formulario" method="post">
+            <div class="inputs">
+                <!-- Si el for tiene el mismo texto que el id de input, al tocar el label se hará focus al input con ese id.-->
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" autofocus>
+            </div>
+            <div class="inputs">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email">
+            </div>
+            <div class="checkboxes">
+                <input type="checkbox" id="tyc" name="tyc" value="tyc"> <!-- tyc es terminos-y-condiciones, pero abreviado. -->
+                <span class="checkmark"></span>
+                <label for="tyc">Aceptas los términos y condiciones</label>
+            </div>
+            <div class="checkboxes">
+                <input type="checkbox" id="publi" name="publi" value="publi">
+                <span class="checkmark"></span>
+                <label for="publi">Aceptas que te enviemos publicidad</label>
+            </div>
+            <div class="checkboxes">
+                <input type="checkbox" id="datos" name="datos" value="datos">
+                <span class="checkmark"></span>
+                <label for="datos">Aceptas que compartamos tus datos con otras empresas</label>
+            </div>
+
+            <button class="submit" type="submit">SUSCRIBIRME</button>
+        </form>
+    </div>
+
+    <hr>
+    <div class="table_container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>UUIDv4</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Fecha Suscrito</th>
+                    <th>TyC</th>
+                    <th>Publi</th>
+                    <th>Datos</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tfoot>
+                    <tr> 
+                        <td colspan="6">Total:</td>
+                        <td id="totalSuscripciones" colspan="2">0</td>
+                    </tr>
+                </tfoot>
+            </tbody>
+        </table>
+    </div>
+
+    <!--<teppha></teppha>-->
+    <script src="newsletter.js"></script>
+</body>
+</html>

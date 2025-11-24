@@ -1,0 +1,11 @@
+#contenedor_contador {
+    
+    button {
+        border: 1px solid #928c96;
+        color: rgb(48, 38, 38);
+        background-color: antiquewhite;
+        padding: auto;
+        padding: 8px 13px 8px 13px;
+        font-size: 25px;
+    }
+}

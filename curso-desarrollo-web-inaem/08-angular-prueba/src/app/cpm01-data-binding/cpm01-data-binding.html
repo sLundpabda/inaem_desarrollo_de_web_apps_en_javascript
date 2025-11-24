@@ -1,0 +1,51 @@
+<h2>Tema 01: Data Binding</h2>
+
+<h3>String Interpolation</h3>
+<p> Bienvenido {{nombre}}</p> <!-- Llamamos a la variable nombre que hay en el .ts de dicho compontente -->
+<!-- <p> Bienvenido {{getNombre()}}</p>--> <!-- Llamamos a la function para que nos devuelva el nombre -->
+  <!--
+    /!\ Cada vez que cambia algo de dentro 
+    del html (el nombre, o pintar un componente), 
+    el Angular va ha estar llamando a la funcion
+    constantemente si esta en {{}}, por eso es 
+    mala práctica hacer de esta forma llamar a 
+    una function desde el compontente .html 
+    para que se lo entrege el dato el .ts .
+
+    Es mejor que se quede guardado en una 
+    propiedad. /!\
+  -->
+  <!-- 
+    (¡) También pueden hacerse operadores
+    ternarios para que según la condición se
+    muestre algo u otro. (¡)
+  -->
+
+
+<h3>Property Binding</h3>
+<img [src]="urlLogo" width="150" alt="Logo de Angular">
+  <!-- 
+     (¡) Hay una propiedad urlLogo, asi que ve a buscar el dato 
+     de dicha propiedad en el .ts, y devuelvelo en la [src] -> que es lo mismo que src
+     pero poner la propiedad en corchetes le dice que busque dicho dato
+     en el script .ts del componente. (¡)
+  -->
+<img src="{{urlLogo}}" width="250" alt="Logo de Angular">
+
+
+<h3>Event Binding</h3>
+<button type="button" (click)="saludar()">Saludar</button>
+<!-- 
+  Eventos: (con parentesis en la etiqueta)
+    (mouseover) -> el ratón pasa por encima.
+    (click) -> se hace clic al btn.
+-->
+<a href="http://google.com" (click)="mostrarHref($event)">Ir a google</a>
+<button type="button" (click)="resetNombre()">Reset nombre</button>
+
+<h3>Two Way Binding</h3> <!-- Usamos lo que se inventaron en Angular, la caja de platanos. -->
+<input type="text" [(ngModel)]="nombre" >
+
+<h3>Ejercicio producto</h3>
+<app-producto></app-producto>
+
