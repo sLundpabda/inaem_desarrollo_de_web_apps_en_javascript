@@ -15,6 +15,15 @@ export class Cmp02Directivas {
     'conejo'
   ]
 
+  suscripciones: Array<any> = []
+
+  // se ejecuta cuando se inicia el componente:
+  ngOnInit() {
+    console.log('Se acaba de inicializar el componente')
+    // le digo que si el localStorage suscripciones es null (por que no existe), entonces me haces un string con [] array para que me lo parsees como un array vacio.
+    this.suscripciones = JSON.parse(localStorage.getItem('suscripciones') || '[]')
+  }
+
   usuarioValido: any = {
     username: 'angel1234',
     password: '1234',
