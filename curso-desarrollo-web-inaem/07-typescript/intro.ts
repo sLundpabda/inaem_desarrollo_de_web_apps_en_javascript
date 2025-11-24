@@ -113,11 +113,13 @@ const carrito1: CarritoCompra = {
         // En el navegador es el objeto window.
 
         // En node es un objeto vacío {}.
-        // Cuando this esta fuera, this coge el valor global que es nada.
+        // Cuando this esta fuera, this coge el valor root que es {} vacío.
+        // Y luego esta el global
 
         function mostrarCarrito() {
             console.log('Dentro', this) // En este caso this es el objeto global, y ahora mismo es el objeto de node (ya que node está ejecutando está función).
         }
+        // .bin() es para sobreescribir la function.
         // mostrarCarrito = mostrarCarrito.bind(this) // sobreesribe la funcion que tengo con esa misma funcion, diciendole que el this es mostrarCarrito
         mostrarCarrito = mostrarCarrito.bind(mike) // esto puede llegar a dar problemas (además es ambiguo, se hacia hace muchos años atrás)
         mostrarCarrito()
@@ -127,6 +129,7 @@ const carrito1: CarritoCompra = {
             console.log('Dentro 2: ', this)
         }
         mostrarCarrito2()
+
         // Estos ejemplos nunca se hacen, solo son ejemplos para entender qeu es el this en cada situación.
     }
 }

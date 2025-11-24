@@ -1,7 +1,5 @@
 const API_URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='
 const API_URL_ID = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i='
-const NOT_FOUND_DATA = 'Sin resultados'
-
 
 const buscarCocktails = async (filtro) => {
     // TODO: hacer peticion a la API para obtener la lista de cocktails
@@ -24,33 +22,21 @@ const buscarCocktails = async (filtro) => {
     // ]
 };
 
-
 const pintarCocktails = (cocktails) => {
-    const container = document.querySelector('#contenedorCocktails')
-    let containerList = () => {
-        return `<ul id="listadoCocktails"></ul>`;
-    };
+    const listado = document.querySelector('#listadoCocktails')
 
-    container.innerHTML = containerList(); 
-
-    containerList = document.querySelector('#listadoCocktails')
-    try {
-        const listaCocktailsHtml = cocktails.map((cocktail) => {
-            return `
-            <li id="${cocktail.idDrink}">
+    const listaCocktailsHtml = cocktails.map((cocktail) => {
+        return `<li id="${cocktail.idDrink}">
+            <span>
                 <img src="${cocktail.strDrinkThumb}" width="150" alt="Imagen de ${cocktail.strDrink}"></img>
-                <div>
-                    <span>${cocktail.strDrink}</span>
-                </div>
-                <button class="btnIdDrink" type="button">INFORMACIÓN</button>
-            </li>`
-        });
+                <p>${cocktail.strDrink}</p>
+            </span>
+            <button class="btnIdDrink" type="button">📋</button>
+        </li>`
+    });
+    listado.innerHTML = listaCocktailsHtml.join('') 
 
-        containerList.innerHTML = listaCocktailsHtml.join('')
-    } catch (e) {
-        pintarSinResultados('<!-- Preprocessing data for scripts -->')
-    }
-
+    pintarSinResultados('') // lo pinta vacio para que no se vea
 
     // ---------------------------------------------------------------------------------------------------------------------------
     const btnAlertInstrucciones = document.querySelectorAll('.btnIdDrink') // 'li>button'<<-- (!) ¡así erá antes!
@@ -62,17 +48,17 @@ const pintarCocktails = (cocktails) => {
             buscarInstrucciones(idDrink)
         })
     })
+
 }
 
-
 const pintarSinResultados = (data) => {
-    const listado = document.querySelector('#contenedorCocktails');
+    const listado = document.querySelector('#contenedorCocktails p');
     const sinResultadosHtml = (datos) => {
         return `${datos}`;
     };
 
     listado.innerHTML = sinResultadosHtml(data); 
-    // console.log('Dentro: ', data)
+    console.log('Dentro: ', data)
 
     if (data === '') {
         const listado = document.querySelector('#listadoCocktails')
@@ -83,7 +69,6 @@ const pintarSinResultados = (data) => {
         listado.innerHTML = listaCocktailsHtml.join('') 
     }
 };
-
 
 const buscarInstrucciones = async (petition) => {
     const response = await fetch(`${API_URL_ID}${petition}`)
@@ -101,15 +86,14 @@ const buscarInstrucciones = async (petition) => {
 
 }
 
-
 // ---------------------------------------------------------------------------------------*
 
 const formulario = document.querySelector('#buscador')
 formulario.addEventListener('submit', async (event) => { // importante poner event
     event.preventDefault() // para evitar que se refresque la pagina web al hacer el submit en el formulario de dentro.
+    console.log(formulario.elements.filtro.value)
 
-    const cocktailABuscar = (formulario.elements.filtro.value).toLowerCase()
-    console.log(cocktailABuscar)
+    const cocktailABuscar = formulario.elements.filtro.value
 
     // ahora que hemos devuelto un dato en buscarCocktails, ahora es una promesa:
     const cocktails = await buscarCocktails(cocktailABuscar) // con los cockteles ya obtenidos llamamo a pintarCocktails()
@@ -118,10 +102,9 @@ formulario.addEventListener('submit', async (event) => { // importante poner eve
     if (cocktails !== null) {
         pintarCocktails(cocktails)
     } else {
-        pintarSinResultados(`<p>${NOT_FOUND_DATA}</p>`)
+        pintarSinResultados('Sin resultados')
     }
 })
-
 
 
 /*
