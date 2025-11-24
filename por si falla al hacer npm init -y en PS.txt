@@ -1,0 +1,5 @@
+COMANDO PARA HABILITAR EJECUCIÓN DE SCRIPTS:
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+
+Hacer el comando: $npm init -y (crea un fichero llamado 'package.json')
