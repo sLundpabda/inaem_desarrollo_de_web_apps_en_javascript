@@ -1,4 +1,4 @@
-<p>producto works!</p>
+<!-- <p>producto works!</p> -->
 <!-- 
 EJERCICIO
  Crea una lista de producto que contenga los siguientes elementos:
@@ -14,6 +14,8 @@ EJERCICIO
     <h4>{{producto.titulo}}</h4>
     <h4>{{producto.descripcion}}</h4>
     <img [src]="producto.imagenUrl" width="150" />
-    <p>Precio: {{producto.precio}} €</p>
-    <p>Fecha: {{producto.fechaLanzamiento}}</p>
+    <!-- Para cambiar la posicion del simbolo para la moneda, debe cambiar el locale de EEUU a EUROPEO -->
+    <p>Precio: {{producto.precio | currency:'EUR'}}</p> <!-- El pipe coge el precio y lo convierte a otra cosa --> <!-- currency:'GBP' => libras -->
+    <!-- Aquí estan todas los tipos de simbolos que se pueden poner del precio con CurrencyPipe: en.wikipedia.org/wiki/ISO_4217 -->
+    <p>Fecha: {{producto.fechaLanzamiento | date: 'dd/MM/yyyy - hh:mm'}}</p> 
 </div>

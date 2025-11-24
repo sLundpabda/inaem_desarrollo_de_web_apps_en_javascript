@@ -34,11 +34,10 @@
     <p>Logueate, por favor.</p>
 }
 
-<!-- Esto debe estar en el LocalStorage del navegador, para testear la web angular:
+<!-- Esto debe ponerse en el LocalStorage del navegador, para testear la web angular:
 SUSCRIPCIONES DEL LOCALSTORAGE:
 [{"email":"asd","nombre":"ssss","publi":true,"tyc":true,"datos":true,"num":"9fcc37a0-1dd5-47be-918f-4707bc7ed5d1","fechaSuscripcion":1763482368943},{"email":"asd","nombre":"asdas","publi":false,"tyc":true,"datos":false,"num":"ccb71deb-cc98-4226-b827-816a7b902540","fechaSuscripcion":1763482377863}]
 -->
-
 <table>
     <thead>
         <tr>
@@ -51,14 +50,16 @@ SUSCRIPCIONES DEL LOCALSTORAGE:
         </tr>
     </thead>
     <tbody>
-        @for (suscripcion of suscripciones; track suscripcion.id) {
-            <tr>
-                <td></td>
+        <!-- Directivas estructurales que modifican el DOM (@if, @else, @switch, @case, @for) -->
+        <!-- Directivas de atributo que modifica el comportamiento de un area (ngClass) -->
+        @for (suscripcion of suscripciones; track suscripcion.num) {
+            <tr [ngClass]="{esPrimeraFila: $first, esUltimaFila: $last, filaPar: $even, filaImpar: $odd}"> <!-- El ngClass lo que hace es que podemos asignarle clases dependiendo de un boolean si es true o false -->
+                <td>{{$index + 1}}</td>
                 <td>{{suscripcion.email}}</td>
                 <td>{{suscripcion.tyc ? '✔' : '❌'}}</td>
                 <td>{{suscripcion.publi ? '✔' : '❌'}}</td>
                 <td>{{suscripcion.datos ? '✔' : '❌'}}</td>
-                <td>{{suscripcion.fecha}}</td>
+                <td>{{suscripcion.fechaSuscripcion}}</td>
             </tr>
         }
     </tbody>

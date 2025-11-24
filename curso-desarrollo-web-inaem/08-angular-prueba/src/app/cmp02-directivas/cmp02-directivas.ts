@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { NgClass } from "@angular/common";
 
 @Component({
   selector: 'app-cmp02-directivas',
-  imports: [FormsModule], // habria que importar NgFor, pero esta @deprecado
+  imports: [FormsModule, NgClass], // habria que importar NgFor, pero esta @deprecado
   templateUrl: './cmp02-directivas.html',
   styleUrl: './cmp02-directivas.css',
 })

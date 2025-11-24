@@ -1,8 +1,9 @@
+import { CurrencyPipe, DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-producto',
-  imports: [],
+  imports: [CurrencyPipe, DatePipe],
   templateUrl: './producto.html',
   styleUrl: './producto.css',
 })
