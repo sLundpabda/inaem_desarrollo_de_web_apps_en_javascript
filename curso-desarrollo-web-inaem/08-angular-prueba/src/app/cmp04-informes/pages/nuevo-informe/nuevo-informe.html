@@ -1,1 +1,18 @@
-<p>nuevo-informe works!</p>
+<h3>Nuevo informe</h3>
+
+<!-- El [(ngModel)] se usa para formularios básicos, esta vez usaremos la directiva [formGroup] y formControlName: -->
+@if (formInforme) { <!-- En Angular ya han hecho un evento para poder enviar los datos hacia un metodo, en este caso guardar(): -->
+    <form [formGroup]="formInforme" (ngSubmit)="guardar()">
+        <div>
+            <label for="titulo">Título</label>
+            <input type="text" id="titulo" formControlName="titulo"> <!-- La directiva formControlName="" es como el name="" en html -->
+        </div>
+        <div>
+            <label for="contenido">Contenido</label>
+            <textarea type="text" id="contenido" formControlName="contenido"></textarea>
+        </div>
+
+        <!-- Ahora hacemos que el formulario se deshabilite si es invalido: (desde la directiva de 'formInforme' almacenada en [formGroup]="formInforme")-->
+        <button type="submit" [disabled]="formInforme.invalid">Guardar</button>
+    </form>
+}

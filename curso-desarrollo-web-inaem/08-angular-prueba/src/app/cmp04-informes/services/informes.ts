@@ -24,6 +24,11 @@ export class Informes {
       }
     ]
   }
+
+  addInformes(informe: any) {
+    console.log(informe)
+  }
+
 }
 
 // Los servicios sson clases en las que nosotros vamos a poder añadir methods/métodos que usualmente 
@@ -33,3 +38,5 @@ export class Informes {
 // se puede tener en 1 solo servicio todo centralizada.
 // Este tipo de logica que no es propio de un componente sino de varios componentes, podemos llevarla a un servicio.
 //
+//
+
