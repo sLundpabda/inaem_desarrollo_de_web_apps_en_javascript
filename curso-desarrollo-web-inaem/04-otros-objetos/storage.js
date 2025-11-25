@@ -71,12 +71,12 @@ function getCookie(nombre) {
   return null;
 }
 
-console.log(getCookie("usuario"));
+console.log("Cookie usuario: ", getCookie("tema"));
 
 // Esto es para borrar la cookie:
 function borrarCookie(nombre) {
   document.cookie = `${nombre}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/`;
 }
 
-borrarCookie("tema");
+// borrarCookie("tema");
 
