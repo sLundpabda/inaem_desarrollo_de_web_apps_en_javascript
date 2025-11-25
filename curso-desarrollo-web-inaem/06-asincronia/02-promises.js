@@ -22,7 +22,13 @@ promesa1.then((contenido) => { // onfulfilled -> es el valor de la promesa que t
 }).catch((err) => {
     console.error('Error', err.toString())
 
-}).finally {
+}).finally((end) => {
+    console.log('FIN')
+});
+
+/* O se puede escribir esto:
+
+).finally {
     console.log('FIN');
-}
+};*/
 

@@ -43,6 +43,7 @@ Para usar el comando siguiente se debe estar en la carpeta del proyecto de angul
 Para crear un componente se harán carpetas nuevas por cada componente para tener un mejor orden.
  ng g c cpm01-data-binding
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Standalone: Es que se instalan los componentes por medio de otros.
 // API material angular: https://material.angular.dev/components/button/api#MatButton
 
