@@ -29,7 +29,7 @@ Cuando trabajamos por Angular debemos tener 4 archivos por componente CREADO!!!:
 El componente root es el <app-root> del index.html en Angular.
 Y el html siempre va asociado a un typescript.
 
-Donde pone 'selector:' en 'app.ts', es el nombre de la etiqueta del componente, 
+Donde pone 'selector:' en 📄'app.ts', es el nombre de la etiqueta del componente, 
 ya que cada vez que creamos un componente creamos una nueva etiqueta 
 HTML para dicho componente.
 
@@ -81,6 +81,25 @@ Y ahora vamos a 'app.routes.ts' -> Aquí definimos las rutas/paths de la aplicac
 Y ahora nos vamos al HTML del componente 4: 'cmp04-informes'
 
 [18:38 hrs]
-Ahora vamos a crear un servicio:
+Ahora vamos a crear un ⚙servicio:
  ng g s cmp04-informes/services/informes
+
+
+Y ahora creamos la carpeta 📁'09-api-informes':
+ cd .\09-api-informes
+ npm init -y
+ npm i -D json-server  --> Instalamos esta libreria que hara de mini backend.
+
+Ahora ir al 📄'package.json' y cambiar esta parte:
+  "scripts": {
+    "start": "json-server -w db.json"
+  },
+
+// El '-w' es el watchdog.
+
+
+Después de configurar el fichero 📄'db.json'
+Vamos a ejecutar este comando:
+ npm start
+
 

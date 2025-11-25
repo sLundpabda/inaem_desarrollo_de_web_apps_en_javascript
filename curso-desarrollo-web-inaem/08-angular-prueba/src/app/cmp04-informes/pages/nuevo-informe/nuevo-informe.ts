@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Informes } from '../../services/informes';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nuevo-informe',
@@ -21,6 +22,7 @@ export class NuevoInforme {
   constructor(
     private informesService: Informes, // simpre que usemos un servicio, vamos al constructor del componente donde lo queramos usar y lo inyectamos.
     // Y es basicamente poner private <nombre_de_la_propiedad_que_nosotros_queramos> : <nombre_del_servicio> 
+    private router: Router, // injectamos el Router para poder controlar la redirección a las rutas/paths por las Pages.
   ) {}
 
   ngOnInit() {
@@ -42,7 +44,10 @@ export class NuevoInforme {
     // console.log(this.formInforme?.value)
 
     const informeForm = this.formInforme?.value;
-    this.informesService.addInformes(informeForm)
+    this.informesService.addInformes(informeForm).subscribe((datos) => {
+      console.log("Respuesta: ", datos)
+      this.router.navigateByUrl('/inicio') // nos sirve para después de crear un informe, y se guarde entoncés te envie de nuevo al http://localhost:4200/inicio.
+    })
   }
 
   // FORMULARIOS REACTIVOS

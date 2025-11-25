@@ -1,0 +1,44 @@
+{
+  "informes": [
+    {
+      "id": "1",
+      "titulo": "El caballo blanco de Santiago",
+      "contenido": "El caballo blanco de Santiago, no era blanco, era gris.",
+      "usuarioId": 1,
+      "fechaAlta": 0,
+      "estado": "investigando"
+    },
+    {
+      "id": "2",
+      "titulo": "El niño vampiro sale de la cueva",
+      "contenido": "Trás 1900 años encerrado en la cueva, se ha descubierto que por las noches si que salia.",
+      "usuarioId": 1,
+      "fechaAlta": 0,
+      "estado": "cerrado"
+    },
+    {
+      "id": "10bc",
+      "titulo": "asdasdasdasda",
+      "contenido": "asdasdasdasdasd",
+      "estado": "creado",
+      "usuarioId": 1,
+      "fechaAlta": 1764099462960
+    },
+    {
+      "id": "f230",
+      "titulo": "asdasd",
+      "contenido": "asdasdasd",
+      "estado": "creado",
+      "usuarioId": 1,
+      "fechaAlta": 1764099829110
+    },
+    {
+      "id": "208a",
+      "titulo": "DADADADA",
+      "contenido": "DADADADA",
+      "estado": "creado",
+      "usuarioId": 1,
+      "fechaAlta": 1764100761285
+    }
+  ]
+}

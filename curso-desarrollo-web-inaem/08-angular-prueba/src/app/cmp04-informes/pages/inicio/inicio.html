@@ -1,7 +1,8 @@
 <h3>Informes</h3>
 
 <div>
-    @for (informe of informes; track informe.id) {
+    <!-- Cuando trabajamos con Observables es buena práctica ponerlo al final con un $ para saber con un simple vistazo que propiedades son observables y cuales no. -->
+    @for (informe of informes$ | async; track informe.id) {
        <div>
             <h4>{{informe.titulo}}</h4>
             <p>Estado: {{informe.estado}}</p>
