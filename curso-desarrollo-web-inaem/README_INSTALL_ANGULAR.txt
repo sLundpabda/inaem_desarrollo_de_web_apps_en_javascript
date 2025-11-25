@@ -5,7 +5,7 @@ Desde la terminal de PS, escribimos (en el directorio raíz que queramos instala
 
 Y ahora para crear un proyecto de angular nuevo escribimos esto:
  ng new 08-angular
- > Nos preguntara unas cosas, estas son las respuestas a dar:
+ > Nos preguntará unas cosas, estas son las respuestas a dar:
     n
     CSS
     n
@@ -46,4 +46,41 @@ Para crear un componente se harán carpetas nuevas por cada componente para tene
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Standalone: Es que se instalan los componentes por medio de otros.
 // API material angular: https://material.angular.dev/components/button/api#MatButton
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+(¡) CREACIÓN DE PIPES PROPIAS: (¡)
+Para crear un PIPE propio vamos a la carpeta root del proyecto Angular 
+ ('08-angular' -> Ahora llamado: '08-angular-prueba'):
+
+Y en el terminal ponemos esto:
+ ng g p cmp03-pipes/pipes/to-icon
+
+(¡) Esto crea 2 archivos (uno de testing y otro que es el typescript)
+
+
+// ---------------------------------------------------------------------------------------
+[17:56 hrs]
+Ahora vamos a hacer un ejercicio de informes:
+ ng g c cmp04-informes
+ 
+Para crear varios Pages como componentes:
+ ng g c cmp04-informes/pages/inicio
+ ng g c cmp04-informes/pages/nuevo-informe
+ ng g c cmp04-informes/components/menu  --> Este va a estar en la carpeta de Components, por que no es un Page.
+
+Y ahora vamos a 'app.routes.ts' -> Aquí definimos las rutas/paths de la aplicación.
+ Routes es un array de rutas, que principalmente tiene el 'path' que es un string, 
+ y lo siguiente es el 'component' que queremos pintar.
+
+ export const routes: Routes = [
+    { path: 'inicio', component: Inicio },
+    { path: 'nuevo-informe', component: NuevoInforme }
+];
+
+Y ahora nos vamos al HTML del componente 4: 'cmp04-informes'
+
+[18:38 hrs]
+Ahora vamos a crear un servicio:
+ ng g s cmp04-informes/services/informes
 

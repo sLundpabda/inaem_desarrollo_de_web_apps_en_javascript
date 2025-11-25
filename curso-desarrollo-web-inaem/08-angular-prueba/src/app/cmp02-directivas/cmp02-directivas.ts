@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { NgClass } from "@angular/common";
+import { DatePipe, NgClass } from "@angular/common";
+import { ToIconPipe } from '../cmp03-pipes/pipes/to-icon-pipe';
 
 @Component({
   selector: 'app-cmp02-directivas',
-  imports: [FormsModule, NgClass], // habria que importar NgFor, pero esta @deprecado
+  imports: [
+    FormsModule, 
+    NgClass, // habria que importar NgFor, pero esta @deprecado
+    ToIconPipe, // El pipe que hemos creado 'toIcon'.
+    DatePipe
+  ], 
   templateUrl: './cmp02-directivas.html',
   styleUrl: './cmp02-directivas.css',
 })
@@ -20,8 +26,9 @@ export class Cmp02Directivas {
 
   // se ejecuta cuando se inicia el componente:
   ngOnInit() {
-    console.log('Se acaba de inicializar el componente')
-    // le digo que si el localStorage suscripciones es null (por que no existe), entonces me haces un string con [] array para que me lo parsees como un array vacio.
+    console.log('Se acaba de inicializar el componente') 
+    
+    // Le digo que si el localStorage suscripciones es null (por que no existe), entonces me haces un string con [] array para que me lo parsees como un array vacio:
     this.suscripciones = JSON.parse(localStorage.getItem('suscripciones') || '[]')
   }
 

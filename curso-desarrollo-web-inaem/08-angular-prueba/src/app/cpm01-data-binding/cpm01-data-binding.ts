@@ -54,12 +54,13 @@ export class Cpm01DataBinding {
       //   && datosPersona.contacto.telefono.fijo
       //   && datosPersona.contacto.telefono.fijo.numero)
     
-
       console.log(event)
+       // Y si fuera un boton -> HTMLButtonElement
+       // HTMLDivElement, HTMLInputElement, .. (cada uno tiene sus diferentes clases)
       const target = event.target as HTMLAnchorElement
   
       console.log(target.href)
-      // Y si fuera un boton -> HTMLButtonElement
+     
     }
 
     resetNombre() {

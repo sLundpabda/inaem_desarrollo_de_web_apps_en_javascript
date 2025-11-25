@@ -1,0 +1,10 @@
+<h3>Informes</h3>
+
+<div>
+    @for (informe of informes; track informe.id) {
+       <div>
+            <h4>{{informe.titulo}}</h4>
+            <p>Estado: {{informe.estado}}</p>
+       </div> 
+    }
+</div>

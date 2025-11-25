@@ -1,11 +1,13 @@
 <p>Tema 02: Directivas</p>
 <ul>
-    <!-- <li *ngFor="let animal of animales">{{animal}}</li> --> <!-- Esto se usaba antiguamente, ahora ya no. -->
+    <!-- Esto se usaba antiguamente, ahora ya no: -->
+    <!-- <li *ngFor="let animal of animales">{{animal}}</li> --> 
     
     <!-- El track $index es uan forma de optimizar el como recorre la lista para luego pintarla -->
+    <!-- Al usar track $index para trackear la posicion de la lista en la que se va pintando, no se puede volver a sobreescribir encima dese el DOM: -->
     @for (animal of animales; track $index) {
         <li>{{animal}}</li>
-    } <!-- Al usar track $index para trackear la posicion de la lista en la que se va pintando, no se puede volver a sobreescribir encima dese el DOM -->
+    } 
 </ul>
 
 <div>
@@ -34,9 +36,10 @@
     <p>Logueate, por favor.</p>
 }
 
-<!-- Esto debe ponerse en el LocalStorage del navegador, para testear la web angular:
-SUSCRIPCIONES DEL LOCALSTORAGE:
-[{"email":"asd","nombre":"ssss","publi":true,"tyc":true,"datos":true,"num":"9fcc37a0-1dd5-47be-918f-4707bc7ed5d1","fechaSuscripcion":1763482368943},{"email":"asd","nombre":"asdas","publi":false,"tyc":true,"datos":false,"num":"ccb71deb-cc98-4226-b827-816a7b902540","fechaSuscripcion":1763482377863}]
+<!-- (¡) INFORMACIÓN:
+ Esto debe ponerse en el LocalStorage del navegador, para testear la web angular:
+ -> SUSCRIPCIONES DEL LOCALSTORAGE:
+  [{"email":"asd","nombre":"ssss","publi":true,"tyc":true,"datos":true,"num":"9fcc37a0-1dd5-47be-918f-4707bc7ed5d1","fechaSuscripcion":1763482368943},{"email":"asd","nombre":"asdas","publi":false,"tyc":true,"datos":false,"num":"ccb71deb-cc98-4226-b827-816a7b902540","fechaSuscripcion":1763482377863}]
 -->
 <table>
     <thead>
@@ -50,16 +53,18 @@ SUSCRIPCIONES DEL LOCALSTORAGE:
         </tr>
     </thead>
     <tbody>
-        <!-- Directivas estructurales que modifican el DOM (@if, @else, @switch, @case, @for) -->
-        <!-- Directivas de atributo que modifica el comportamiento de un area (ngClass) -->
+        <!-- Directivas ESTRUCTURALES son las que modifican el DOM (@if, @else, @switch, @case, @for, ...) -->
+        <!-- Directivas de ATRIBUTO son las que modifican el comportamiento de un area (ngClass, ngModel, ... [no ngIf, ngFor, entre otros (ya que están en deshuso/ambigüos)]) -->
+        
         @for (suscripcion of suscripciones; track suscripcion.num) {
-            <tr [ngClass]="{esPrimeraFila: $first, esUltimaFila: $last, filaPar: $even, filaImpar: $odd}"> <!-- El ngClass lo que hace es que podemos asignarle clases dependiendo de un boolean si es true o false -->
+            <!-- El 'ngClass' lo que hace es que podemos asignarle clases dependiendo de un boolean si es true o false: -->
+            <tr [ngClass]="{esPrimeraFila: $first, esUltimaFila: $last, filaPar: $even, filaImpar: $odd}"> 
                 <td>{{$index + 1}}</td>
                 <td>{{suscripcion.email}}</td>
-                <td>{{suscripcion.tyc ? '✔' : '❌'}}</td>
-                <td>{{suscripcion.publi ? '✔' : '❌'}}</td>
-                <td>{{suscripcion.datos ? '✔' : '❌'}}</td>
-                <td>{{suscripcion.fechaSuscripcion}}</td>
+                <td>{{suscripcion.tyc | toIcon}}</td> <!-- El valor de 'tyc' va a ir al value de primer parametro value de la función transform del PIPE creado. -->
+                <td>{{suscripcion.publi ? '✔️' : '❌'}}</td>
+                <td>{{suscripcion.datos ? '✔️' : '❌'}}</td>
+                <td>{{suscripcion.fechaSuscripcion | date:'dd MMM yyyy'}}</td> <!-- Coge el timestamp y lo convierte a fecha -->
             </tr>
         }
     </tbody>

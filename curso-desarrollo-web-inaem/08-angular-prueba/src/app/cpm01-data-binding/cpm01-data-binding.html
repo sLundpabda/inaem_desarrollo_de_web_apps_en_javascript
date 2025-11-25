@@ -40,11 +40,15 @@
     (mouseover) -> el ratón pasa por encima.
     (click) -> se hace clic al btn.
 -->
+    <!-- Para pasarle a la función el event, se usa el $event, 
+         es como el $last (para los eventos hay un $event que nos permite acceder a estos/ellos) -->
 <a href="http://google.com" (click)="mostrarHref($event)">Ir a google</a>
 <button type="button" (click)="resetNombre()">Reset nombre</button>
 
 <h3>Two Way Binding</h3> <!-- Usamos lo que se inventaron en Angular, la caja de platanos. -->
-<input type="text" [(ngModel)]="nombre" >
+<input type="text" [(ngModel)]="nombre" > 
+<!-- Si lo yo le digo esto es que el valor de 'nombre' se va a estar modificando el 'nombre', y los demás 
+     que usen el valor de 'nombre' se van a actualizar en el documento. -->
 
 <h3>Ejercicio producto</h3>
 <app-producto></app-producto>
