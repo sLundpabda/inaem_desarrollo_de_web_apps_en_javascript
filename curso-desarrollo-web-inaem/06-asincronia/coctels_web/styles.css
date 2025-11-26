@@ -136,6 +136,7 @@ div[id="contenedorCocktails"] {
     display: flex;
     justify-content: center;
     margin-top: 45px;
+    margin-bottom: 20px;
     flex-direction: column;
     padding: 0 14px;
 
@@ -194,16 +195,17 @@ ul {
     color: white;
     font-family: Helvetica !important;
     font-weight: bold;
-    border-radius: 10px;
+    /*border-radius: 10px;*/
+    border-radius: 12px 47px 12px 47px;
+    box-shadow: 11px 9px 1px #cf8f5d;
     justify-content: space-between;
     margin: 8px;
 
     img {
         background-size: cover;
-        height: 14rem;
-        /*width: 21.46rem;*/
         width: -webkit-fill-available;
-        border-radius: 6px;
+        height: 14rem; /*width: 21.46rem;*/
+        border-radius: 8px 32px 8px 28px; /*border-radius: 6px;*/
         margin: 2px;
     }
 
