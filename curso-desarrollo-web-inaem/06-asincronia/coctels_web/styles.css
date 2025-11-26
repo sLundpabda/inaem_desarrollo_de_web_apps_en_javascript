@@ -48,6 +48,7 @@ nav {
         pointer-events: none;
         height: 36px; /* 28px; */
         margin: 12px;
+        width: 250px;
     }
 
     div {
@@ -85,16 +86,51 @@ nav {
         }
     }
 }
+@media only screen and (max-width: 688px) {
+    #buscador {
+        .filtroName {
+            display: none;
+        }
 
+        & div input {
+            width: 264px;
+        }
+    }
 
- @media only screen and (max-width: 556px) { /*(max-width: 1344px) {*/
-    .filtroName {
-        display: none;
+}
+
+@media only screen and (max-width: 650px) { /*(max-width: 1344px) {*/
+    #buscador {
+        flex-direction: column;
+        gap: 0px;
+
+        /*& img {
+            max-width: 260px;
+        }*/
+
+        & div {
+            padding-bottom: 5px;
+            /*position: relative;
+            background-color: #ff852c36;*/
+            
+            .filtroName {
+                display: none;
+            }
+
+            input {
+                margin-left: 18px;
+                width: 100%;
+            }
+        }
     }
     /*ul {
         grid-template-columns: repeat(auto-fill, 144px) !important;
     }*/
-  }
+    #contenedorCocktails {
+        margin-top: 100px;
+    } 
+
+}
 
 div[id="contenedorCocktails"] {
     display: flex;
