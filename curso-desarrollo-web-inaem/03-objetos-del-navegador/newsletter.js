@@ -168,6 +168,13 @@ formulario.addEventListener('submit', (event) => {
     const tyc = campos.tyc.checked
     const datos = campos.datos.checked
 
+    // Check values:
+    if (nombre.trim().length === 0 && email.trim().length === 0) {
+        console.log('Void strings for name and email.');
+        return;
+    }
+
+    // Suscription object:
     const suscripcion = {
         id: 0, // se usará para el ID universal
         email: email,
