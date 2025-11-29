@@ -15,8 +15,10 @@ Y ahora para crear un proyecto de angular nuevo escribimos esto:
 Entonces se descargaran e instalaran lo elegido de Angular en dicho proyecto con nombre de carpeta: '08-angular
 
 Para encender el servidor de angular 21:
- ng s // -> Levanta el servidor por el puerto :4200
- o: ng serve = npm start
+ ng s // -> Levanta el servidor por el puerto :4200 desde el localhost
+ ng s --host <IP> // -> Levanta el servidor desde la IP que pongas de tu localhost (por ejemplo: 192.168.1.15)
+ // o: 'ng serve' que es == a 'npm start'
+ // la 's' es serve.
 (Está todo en el 'package.json')
 
 
@@ -101,5 +103,4 @@ Ahora ir al 📄'package.json' y cambiar esta parte:
 Después de configurar el fichero 📄'db.json'
 Vamos a ejecutar este comando:
  npm start
-
 
